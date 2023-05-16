@@ -30,5 +30,7 @@ class Movie
 
 
 $Terminator = new Movie('Terminator', '120', 'Pippo', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo maiores ratione nulla asperiores qui. Fugiat temporibus deleniti, debitis dicta quasi saepe corrupti sequi doloribus labore quisquam nostrum aperiam officiis consequatur.', new Genre('azione'));
+$Terminator2 = new Movie('Terminator 2', '130', 'Pippo 2 la vendetta', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo maiores ratione nulla asperiores qui. Fugiat temporibus deleniti, debitis dicta quasi saepe corrupti sequi doloribus labore quisquam nostrum aperiam officiis consequatur.', new Genre('realtà'));
 
 var_dump($Terminator);
+var_dump($Terminator2);
