@@ -56,19 +56,19 @@ var_dump($Terminator2);
             <div class="row">
                 <div class="col-4">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column gap-2 border-bottom-1">
                             <h3 class="card-title">
                                 <?= $Movie1->title ?>
                             </h3>
-                            <span class="card-text">
+                            <span class="card-text border-bottom">
                                 Durata:
                                 <?= $Movie1->runtime ?>
-                            </span>
+                            </span class="card-text border-bottom">
                             <span>
                                 Genere:
-                                <?= $Movie1->$Genre->genre ?>
+                                <?= $Movie1->genre->genre ?>
                             </span>
-                            <p>
+                            <p class="card-text border-bottom">
                                 Descrizione
                                 <?= $Movie1->description ?>
                             </p>
@@ -78,19 +78,19 @@ var_dump($Terminator2);
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column gap-2 ">
                             <h3 class="card-title">
                                 <?= $Movie2->title ?>
                             </h3>
-                            <span class="card-text">
+                            <span class="card-text border-bottom">
                                 Durata:
                                 <?= $Movie2->runtime ?>
                             </span>
-                            <span>
+                            <span class="card-text border-bottom">
                                 Genere:
-                                <?= $Movie2->$Genre->genre ?>
+                                <?= $Movie2->genre->genre ?>
                             </span>
-                            <p>
+                            <p class="card-text border-bottom">
                                 Descrizione
                                 <?= $Movie2->description ?>
                             </p>
