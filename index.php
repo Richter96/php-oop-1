@@ -26,16 +26,16 @@ class Movie
         $this->genre = $_genre;
     }
 }; */
-require __DIR__  . '/Models/generi.php';
-require __DIR__  . '/Models/movie.php';
 
-$Movie1 = new Movie('Terminator', '120', 'Pippo', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo maiores ratione nulla asperiores qui. Fugiat temporibus deleniti, debitis dicta quasi saepe corrupti sequi doloribus labore quisquam nostrum aperiam officiis consequatur.', new Genre('azione'));
-$Movie2 = new Movie('Terminator 2', '130', 'Pippo 2 la vendetta', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo maiores ratione nulla asperiores qui. Fugiat temporibus deleniti, debitis dicta quasi saepe corrupti sequi doloribus labore quisquam nostrum aperiam officiis consequatur.', new Genre('realtà'));
-var_dump($Movie1);
 /* 
 var_dump($Terminator2);
+*/
+/* foreach ($MOVIES as $movie) {
+    var_dump($movie);
+}; */
 
- */
+require __DIR__  . '/Models/generi.php';
+require __DIR__  . '/Models/movie.php';
 ?>
 
 <!DOCTYPE html>
@@ -51,62 +51,40 @@ var_dump($Terminator2);
 
 <body>
 
+
     <div id="app">
-        <div class="container-md">
-            <div class="row">
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-body d-flex flex-column gap-2 border-bottom-1">
-                            <h3 class="card-title">
-                                <?= $Movie1->title ?>
-                            </h3>
-                            <span class="card-text border-bottom">
-                                Durata:
-                                <?= $Movie1->runtime ?>
-                            </span class="card-text border-bottom">
-                            <span>
-                                Genere:
-                                <?= $Movie1->genre->genre ?>
-                            </span>
-                            <p class="card-text border-bottom">
-                                Descrizione
-                                <?= $Movie1->description ?>
-                            </p>
-
+        <header></header>
+        <main>
+            <div class="container-md">
+                <div class="row justify-content-center">
+                    <?php foreach ($MOVIES as $movie) : ?>
+                        <div class="col-4">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body d-flex flex-column gap-2 border-bottom-1">
+                                    <h3 class="card-title">
+                                        <?= $movie->title ?>
+                                    </h3>
+                                    <span class="card-text border-bottom">
+                                        Durata:
+                                        <?= $movie->runtime ?>
+                                    </span class="card-text border-bottom">
+                                    <span>
+                                        Genere:
+                                        <?= $movie->genre->genre ?>
+                                    </span>
+                                    <p class="card-text border-bottom">
+                                        Descrizione
+                                        <?= $movie->description ?>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-body d-flex flex-column gap-2 ">
-                            <h3 class="card-title">
-                                <?= $Movie2->title ?>
-                            </h3>
-                            <span class="card-text border-bottom">
-                                Durata:
-                                <?= $Movie2->runtime ?>
-                            </span>
-                            <span class="card-text border-bottom">
-                                Genere:
-                                <?= $Movie2->genre->genre ?>
-                            </span>
-                            <p class="card-text border-bottom">
-                                Descrizione
-                                <?= $Movie2->description ?>
-                            </p>
-
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
-
-
-
-
-
-
 
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -121,9 +99,7 @@ var_dump($Terminator2);
 
         createApp({
             data() {
-                return {
-                    message: 'Hello Vue!'
-                }
+                return {}
             }
         }).mount('#app')
     </script>
